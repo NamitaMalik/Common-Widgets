@@ -1,0 +1,10 @@
+{
+  "name": "CommonWidgets",
+  "nameLower": "cw",
+  "version": "1.0.0",
+  "description": "Common AngularJS Widgets",
+  "readme": "README.md",
+  "devDependencies": {
+    "angular": "1.6.7"
+  }
+}
