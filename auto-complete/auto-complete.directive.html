@@ -1,5 +1,5 @@
 <div class="autocomplete" style="width:300px;">
-<input type="text" ng-model="vm.options.input" ng-keyup="vm.initAutoComplete()">
+<input type="text" ng-model="vm.input" ng-keyup="vm.initAutoComplete()" placeholder="Search Country">
     <div class="autocomplete-items">
         <div ng-repeat="data in vm.data track by $index">{{data.name}}</div>
     </div>

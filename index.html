@@ -6,15 +6,12 @@
     <link rel="stylesheet" type="text/css" href="common-widgets.css">
 </head>
 <body  ng-app="commonWidgets">
-<div ng-controller="CommonWidgetsController as cwc">
-    {{cwc.name}}
-    <auto-complete options="cwc.options"></auto-complete>
+<div>
+    <auto-complete></auto-complete>
 </div>
-
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="common-widgets.module.js"></script>
 <script src="common.service.js"></script>
-<script src="common-widgets.controller.js"></script>
-<script src="auto-complete.directive.js"></script>
+<script src="auto-complete/auto-complete.directive.js"></script>
 </body>
 </html>
