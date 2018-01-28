@@ -1,3 +1,3 @@
 (function(){
-angular.module('commonWidgets',[])
+angular.module('commonWidgets',['autoComplete'])
 })();

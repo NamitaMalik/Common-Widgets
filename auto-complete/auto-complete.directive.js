@@ -1,5 +1,5 @@
 (function() {
-  angular.module('commonWidgets')
+  angular.module('autoComplete')
     .directive('autoComplete', autoComplete);
 
   function autoComplete() {
@@ -8,14 +8,17 @@
       templateUrl: './auto-complete/auto-complete.directive.html',
       controller: AutoCompleteController,
       controllerAs: 'vm',
+      scope: {
+        options : '=options'
+      },
       bindToController: true
     }
     return directive;
   }
 
-  AutoCompleteController.$inject = ['$scope', '$timeout', 'commonService'];
+  AutoCompleteController.$inject = ['$scope', '$timeout', 'AutoCompleteService'];
 
-  function AutoCompleteController($scope, $timeout, commonService) {
+  function AutoCompleteController($scope, $timeout, AutoCompleteService) {
     var vm = this;
     var filterTimeOutId;
     vm.initAutoComplete = initAutoComplete;
@@ -31,7 +34,7 @@
       filterTimeOutId = $timeout(function() {
         if (vm.input.length) {
           //Fetching countries for auto-suggestion
-          commonService.getCountries(vm.input).then(function(response) {
+          AutoCompleteService.getSuggestions(vm.options.suggestionUrl,vm.input).then(function(response) {
             vm.data = response.data;
           })
         }
