@@ -9,16 +9,16 @@
       controller: AutoCompleteController,
       controllerAs: 'vm',
       scope: {
-        options : '=options'
+        options : '='
       },
       bindToController: true
     }
     return directive;
   }
 
-  AutoCompleteController.$inject = ['$scope', '$timeout', 'AutoCompleteService'];
+  AutoCompleteController.$inject = ['$timeout', 'AutoCompleteService'];
 
-  function AutoCompleteController($scope, $timeout, AutoCompleteService) {
+  function AutoCompleteController($timeout, AutoCompleteService) {
     var vm = this;
     var filterTimeOutId;
     vm.initAutoComplete = initAutoComplete;

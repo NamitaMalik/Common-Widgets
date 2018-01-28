@@ -6,7 +6,7 @@
 
   function CommonWidgetsController(){
     var vm = this;
-    vm.options = {};
-    vm.options.suggestionUrl = 'https://restcountries.eu/rest/v2/name/';
+    vm.country = {};
+    vm.country.suggestionUrl = 'https://restcountries.eu/rest/v2/name/';
   }
 })()

@@ -1,6 +1,6 @@
 describe('Unit testing auto-complete directive', function() {
   var $controller, $compile, $rootScope, $scope, commonService;
-
+  beforeEach(module('commonWidgets'));
   beforeEach(module('autoComplete'));
   beforeEach(module('autoCompleteTemplates'));
   beforeEach(inject(function(_$controller_, _$rootScope_, _$compile_) {
