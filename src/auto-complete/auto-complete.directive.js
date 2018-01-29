@@ -5,7 +5,7 @@
   function autoComplete() {
     var directive = {
       restrict: 'E',
-      templateUrl: './auto-complete/auto-complete.directive.html',
+      templateUrl: './src/auto-complete/auto-complete.directive.html',
       controller: AutoCompleteController,
       controllerAs: 'vm',
       scope: {

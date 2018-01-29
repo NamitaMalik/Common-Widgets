@@ -17,13 +17,13 @@ module.exports = function(config) {
     files: [
       'node_modules/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
+      './*/*/*.module.js',
       './*/*.module.js',
-      './*.module.js',
-      './*.controller.js',
-      './*/*.service.js',
-      './*/*.directive.js',
-      './*/*.directive.html',
-      './*/*.spec.js'
+      './*/*.controller.js',
+      './*/*/*.service.js',
+      './*/*/*.directive.js',
+      './*/*/*.directive.html',
+      './*/*/*.spec.js'
     ],
 
 
@@ -52,23 +52,28 @@ module.exports = function(config) {
     },*/
 
      preprocessors: {
-         './auto-complete/*.html': ['ng-html2js']
+         './src/auto-complete/*.html': ['ng-html2js'],
+         './src/**/*.js': ['coverage']
        },
        ngHtml2JsPreprocessor: {
          prependPrefix: './',
          moduleName: 'autoCompleteTemplates'
        },
 
+     coverageReporter: {
+           type : 'html',
+           dir : 'coverage/'
+         },
+
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress','coverage'],
 
 
     // web server port
     port: 9876,
-
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
