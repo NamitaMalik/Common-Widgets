@@ -6,7 +6,7 @@ This module basically includes common **Angular JS** directives which can be re-
 
 In order to make the demo work, you will have to follow the following steps:
 
-* Clone or download the project from (Common-Widgets repository)[https://github.com/NamitaMalik/Common-Widgets]
+* Clone or download the project from [Common-Widgets repository](https://github.com/NamitaMalik/Common-Widgets)
 * On the command prompt, navigate to the folder Common-Widgets.
 * Run `npm install` to get all dependencies.
 * Install `npm install http-server -g` to install HTTP Server globally.
