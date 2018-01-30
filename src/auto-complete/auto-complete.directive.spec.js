@@ -38,7 +38,7 @@ describe('Unit testing auto-complete directive', function() {
 
   it('should replace the element with input element', function() {
     var element = initDirective(this)
-    expect(element.html()).toContain('Search Country');
+    expect(element.html()).toContain('autocomplete');
   });
 
   it('should have initAutoComplete function definition', function() {

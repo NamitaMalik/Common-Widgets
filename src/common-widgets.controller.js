@@ -8,5 +8,6 @@
     var vm = this;
     vm.country = {};
     vm.country.suggestionUrl = 'https://restcountries.eu/rest/v2/name/';
+    vm.country.placeholder = 'Search Country';
   }
 })()

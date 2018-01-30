@@ -53,7 +53,7 @@ module.exports = function(config) {
 
      preprocessors: {
          './src/auto-complete/*.html': ['ng-html2js'],
-         './src/**/*.js': ['coverage']
+         './src/**/!(*spec).js': ['coverage']
        },
        ngHtml2JsPreprocessor: {
          prependPrefix: './',
