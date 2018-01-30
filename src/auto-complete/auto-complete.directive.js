@@ -31,6 +31,7 @@
     vm.initAutoComplete = initAutoComplete;
     vm.selectSuggestion = selectSuggestion;
     vm.selectedSuggestionIndex = -1;
+    vm.data = [];
     //Listener on keyup for auto-suggestion
     //ToDo : Check for non-character keyup events
     function initAutoComplete(event) {
@@ -40,7 +41,7 @@
         $timeout.cancel(filterTimeOutId);
       }
       if (vm.input && vm.input.length) {
-        if (vm.data && vm.data.length) {
+        if (vm.data.length) {
           switch (event.keyCode) {
             case KEY_DOWN_CODE:
               if (vm.selectedSuggestionIndex < vm.data.length - 1) vm.selectedSuggestionIndex++;
