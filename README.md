@@ -6,17 +6,19 @@ This module basically includes common **Angular JS** directives which can be re-
 
 In order to make the demo work, you will have to follow the following steps:
 
+* Clone or download the project from (Common-Widgets repository)[https://github.com/NamitaMalik/Common-Widgets]
 * On the command prompt, navigate to the folder Common-Widgets.
-* Run `npm install` to get node modules.
+* Run `npm install` to get all dependencies.
 * Install `npm install http-server -g` to install HTTP Server globally.
-* Run `http-server`.
-* Go to `http://127.0.0.1:8080`.
+* Run `hs` or `http-server` command to run the application.
+* Open the link `http://127.0.0.1:8080` in Chrome.
 * The demo would be up and running.
 
 **Unit Tests**
 
 You can also view the unit test results by following the below steps:
 
+* On the command prompt, navigate to the folder Common-Widgets.
 * Run `npm install -g karma-cli` command to install karma globally.
 * Now, run `karma start karma.conf.js` and a browser window will open up.
 * In the console you can check status of the test cases executed.

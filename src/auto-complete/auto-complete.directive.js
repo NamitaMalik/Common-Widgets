@@ -19,6 +19,9 @@
   var KEY_UP_CODE = 38;
   var KEY_DOWN_CODE = 40;
   var ENTER_KEY_CODE = 13;
+  var BACK_SPACE_KEY_CODE = 8;
+  var ALPHA_NUMERIC_START_KEY_CODE = 48;
+  var ALPHA_NUMERIC_END_KEY_CODE = 90;
 
   AutoCompleteController.$inject = ['$timeout', 'AutoCompleteService'];
 
@@ -51,24 +54,26 @@
           }
         }
 
-        if (event.keyCode >= 48 && event.keyCode <= 90) {
+        if (event.keyCode >= ALPHA_NUMERIC_START_KEY_CODE && event.keyCode <= ALPHA_NUMERIC_END_KEY_CODE  || event.keyCode===BACK_SPACE_KEY_CODE) {
           // To delay request, waiting for next keyup event
           filterTimeOutId = $timeout(function() {
             if (vm.input && vm.input.length) {
               //Fetching countries for auto-suggestion
               AutoCompleteService.getSuggestions(vm.options.suggestionUrl, vm.input).then(function(response) {
                 vm.data = response.data;
+                vm.selectedSuggestionIndex = -1;
               })
             }
           }, 500)
         }
-      }
+      } else vm.data.length = 0;
     }
 
     function selectSuggestion(selectedSuggestionIndex) {
       if (selectedSuggestionIndex !== -1) {
         vm.input = vm.data && vm.data[selectedSuggestionIndex].name;
         vm.data.length = 0;
+        vm.selectedSuggestionIndex = -1;
       }
     }
   }
